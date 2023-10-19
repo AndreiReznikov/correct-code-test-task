@@ -1,0 +1,24 @@
+{
+  "menuItems" : [
+    {
+      "name": "О марсе",
+      "link": "/mock-address/change-me"
+    },
+    {
+      "name": "Процесс",
+      "link": "/mock-address/change-me"
+    },
+    {
+      "name": "Билеты",
+      "link": "/mock-address/change-me"
+    },
+    {
+      "name": "Новости",
+      "link": "/mock-address/change-me"
+    },
+    {
+      "name": "Контакты",
+      "link": "/mock-address/change-me"
+    }
+  ]
+}

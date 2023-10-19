@@ -1,0 +1,16 @@
+include ~components/header/header
+include ~templates/mixins
+
+block vars
+
+doctype html
+html(class=className lang="ru")
+  +pageBase({
+    title,
+    keywords,
+    description,
+  })
+  body(class=`${className}__body`)
+    div(class=`${className}__wrapper`)
+      +header()
+      block content

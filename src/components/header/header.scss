@@ -1,0 +1,131 @@
+@import '~templates/mixins';
+@import '~constants/constants';
+
+.header {
+  max-width: $xxl;
+  margin: 30px auto;
+  padding-left: 100px;
+  padding-right: 100px;
+  box-sizing: border-box;
+
+  @include media-max($lg) {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  @include media-max($md) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__right-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__nav {
+    display: flex;
+
+    @include media-max($xl) {
+      display: none;
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  &__nav-item {
+    position: relative;
+    padding-left: 30.5px;
+  }
+
+  &__nav-link {
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #F2E1C2;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:hover {
+      color: #F23207;
+    }
+  }
+
+  &__button-container {
+    margin-left: 40px;
+
+    @include media-max($xl) {
+      margin-left: 0;
+    }
+  }
+
+  &__burger-container {
+    display: none;
+    margin-left: 60px;
+
+    @include media-max($xl) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__burger {
+    position: relative;
+    width: 55px;
+    height: 5px;
+    background-color: #F2E1C2;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 16px;
+      width: 55px;
+      height: 5px;
+      background-color: #F2E1C2;
+      transition: 0.6s;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 16px;
+      width: 55px;
+      height: 5px;
+      background-color: #F2E1C2;
+      transition: 0.6s;
+    }
+
+    &_transformed {
+      height: 0;
+
+      &::after,
+      &::before {
+        transform: rotate(45deg);
+        top: 0;
+        bottom: 0;
+        transition: 0.6s;
+      }
+
+      &::after {
+        transform: rotate(45deg);
+      }
+
+      &::before {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}

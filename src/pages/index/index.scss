@@ -1,0 +1,16 @@
+@import 'normalize.css';
+@import '~components/logo/logo';
+@import '~components/header/header';
+@import '~components/button/button';
+@import '~templates/mixins';
+@import '~constants/constants';
+
+.index {
+  background-image: url('~img/background.jpg');
+
+  &_non-scrollable {
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+  }
+}

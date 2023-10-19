@@ -1,0 +1,12 @@
+.logo {
+  display: inline-flex;
+
+  &__icon {
+    width: 82px;
+    height: 36px;
+    background-image: url('~/icons/logo.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}

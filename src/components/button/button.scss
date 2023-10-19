@@ -1,0 +1,22 @@
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 179px;
+  min-height: 40px;
+  padding: 10px 15px 10px 15px;
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #262526;
+  background-color: #F2E1C2;
+  border-radius: 4px;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  &:hover {
+    color: #F2E1C2;
+    background-color: #F23207;
+  }
+}
