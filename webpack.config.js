@@ -34,6 +34,7 @@ module.exports = {
       '~components': `${PATHS.src}/components`,
       '~libs': `${PATHS.src}/libs`,
       '~img': `${PATHS.src}/img`,
+      '~videos': `${PATHS.src}/videos`,
       '~fonts': `${PATHS.src}/fonts`,
       '~templates': `${PATHS.src}/templates`,
       '~constants': `${PATHS.src}/constants`,
@@ -92,6 +93,25 @@ module.exports = {
           filename: 'assets/images/[name][ext]',
         },
       },
+      {
+        test: /\.(?:mp4)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/videos/[name][ext]',
+        },
+      },
+      // {
+      //   test: /\.(mp4)$/,
+      //   use: [
+      //     {
+      //       loader: 'file-loader',
+      //       options: {
+      //         name: '[name].[ext]',
+      //         outputPath: 'video/',
+      //       },
+      //     },
+      //   ],
+      // },
     ],
   },
   plugins: [

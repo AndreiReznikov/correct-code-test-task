@@ -1,16 +1,24 @@
+import mars from '~videos/mars.mp4';
+
 class LandingPage {
   init() {
     this._findElements();
+    this._setVideo();
     this._addEventListeners();
   }
 
   _findElements() {
     this.$window = $(window);
-    this.$landingPage = $('.landing-page');
+    this.$landingPageBackground = $('.landing-page__background');
+    this.$video = $('video > source');
   }
 
-  _setBackgroundPosition(position) {
-    this.$landingPage.css({ 'background-position': position });
+  _setBackgroundPosition(event, position) {
+    const time = position === 'center' && event.type !== 'mousemove' ? 0 : 1.5;
+    this.$landingPageBackground.css({
+      'background-position': position,
+      transition: `${time}s`,
+    });
   }
 
   _shiftBackground(event) {
@@ -21,12 +29,16 @@ class LandingPage {
     if (this.clientX < this.$windowWidth * 0.33) position = 'left';
     else if (this.clientX > this.$windowWidth * 0.66) position = 'right';
 
-    this._setBackgroundPosition(position);
+    this._setBackgroundPosition(event, position);
+  }
+
+  _setVideo() {
+    this.$video.attr('src', mars);
   }
 
   _addEventListeners() {
-    this.$landingPage.on('mousemove', (event) => this._shiftBackground.call(this, event));
-    this.$landingPage.on('mouseleave', () => this._setBackgroundPosition('center'));
+    this.$landingPageBackground.on('mousemove', (event) => this._shiftBackground.call(this, event));
+    this.$landingPageBackground.on('mouseleave', (event) => this._setBackgroundPosition(event, 'center'));
   }
 }
 

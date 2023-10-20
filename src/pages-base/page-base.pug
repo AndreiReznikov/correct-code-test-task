@@ -12,5 +12,6 @@ html(class=className lang="ru")
   })
   body(class=`${className}__body`)
     div(class=`${className}__wrapper`)
-      +header()
+      div(class=`${className}__header-container`)
+        +header()
       block content

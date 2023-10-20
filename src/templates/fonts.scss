@@ -30,3 +30,14 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'Bebas Neue';
+  src:
+    url('~fonts/bebas-neue-bold.woff2') format('woff2'),
+    url('~fonts/bebas-neue-bold.woff') format('woff'),
+    url('~fonts/bebas-neue-bold.ttf') format('truetype'),
+    url('~fonts/bebas-neue-bold.svg#BebasNeueBold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
