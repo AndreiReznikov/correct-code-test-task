@@ -13,12 +13,8 @@ class LandingPage {
     this.$video = $('video');
   }
 
-  _setBackgroundPosition(event, position) {
-    const time = position === 'center' && event.type !== 'mousemove' ? 0 : 1.5;
-    this.$landingPageBackground.css({
-      'background-position': position,
-      transition: `${time}s`,
-    });
+  _setBackgroundPosition(position) {
+    this.$landingPageBackground.css({ 'background-position': position });
   }
 
   _shiftBackground(event) {
@@ -29,7 +25,7 @@ class LandingPage {
     if (this.clientX < this.$windowWidth * 0.33) position = 'left';
     else if (this.clientX > this.$windowWidth * 0.66) position = 'right';
 
-    this._setBackgroundPosition(event, position);
+    this._setBackgroundPosition(position);
   }
 
   _setVideo() {
@@ -38,7 +34,7 @@ class LandingPage {
 
   _addEventListeners() {
     this.$landingPageBackground.on('mousemove', (event) => this._shiftBackground.call(this, event));
-    this.$landingPageBackground.on('mouseleave', (event) => this._setBackgroundPosition(event, 'center'));
+    this.$landingPageBackground.on('mouseleave', () => this._setBackgroundPosition('center'));
   }
 }
 
