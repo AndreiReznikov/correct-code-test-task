@@ -10,7 +10,7 @@ class LandingPage {
   _findElements() {
     this.$window = $(window);
     this.$landingPageBackground = $('.landing-page__background');
-    this.$video = $('video > source');
+    this.$video = $('video');
   }
 
   _setBackgroundPosition(event, position) {
