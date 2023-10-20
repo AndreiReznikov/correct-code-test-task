@@ -10,7 +10,7 @@ const PATHS = {
   dist: path.resolve(process.cwd(), 'dist'),
 };
 
-const PAGES = ['index'];
+const PAGES = ['landing-page'];
 
 const { NODE_ENV } = process.env;
 

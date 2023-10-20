@@ -5,8 +5,13 @@
 @import '~templates/mixins';
 @import '~constants/constants';
 
-.index {
+.landing-page {
+  min-height: 100vh;
   background-image: url('~img/background.jpg');
+  background-position: center;
+  background-size: auto;
+  background-repeat: no-repeat;
+  transition: 0.8s;
 
   &_non-scrollable {
     position: fixed;

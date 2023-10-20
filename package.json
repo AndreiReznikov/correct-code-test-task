@@ -2,11 +2,11 @@
   "name": "test",
   "version": "1.0.0",
   "description": "Тестовое задание (компания Верный Код)",
-  "main": "index.js",
+  "main": "landing-page.js",
   "scripts": {
     "prod": "webpack --mode production",
     "dev": "webpack --mode development",
-    "server": "webpack serve --open",
+    "server": "webpack serve --open /landing-page.html",
     "lint": "eslint .",
     "stylelint": "stylelint **/*.scss",
     "fix:lint": "eslint . --fix",
