@@ -1,2 +1,7 @@
 mixin button(options = {})
-  .button=options.text
+  -
+    let buttonClass = 'button';
+    buttonClass += options.dark ? ' button_dark' : '';
+    buttonClass += options.long ? ' button_long' : '';
+
+  button(class=buttonClass)=options.text

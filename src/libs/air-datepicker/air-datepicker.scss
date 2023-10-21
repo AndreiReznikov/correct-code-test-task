@@ -2,7 +2,7 @@
 @import '~constants/constants';
 
 .datepicker {
-  width: 775px;
+  width: 790px;
   min-height: 369px;
   box-sizing: border-box;
   z-index: 100;
@@ -26,7 +26,7 @@
   &--nav {
     display: flex;
     align-items: center;
-    padding: 20px 24px 22px;
+    padding: 0 20px;
     border-bottom: none;
     box-sizing: border-box;
   }

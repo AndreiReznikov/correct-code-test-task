@@ -10,11 +10,21 @@
   font-weight: 500;
   color: #262526;
   background-color: #F2E1C2;
+  border: none;
   border-radius: 4px;
   transition: 0.8s;
   text-transform: uppercase;
   box-sizing: border-box;
   cursor: pointer;
+
+  &_dark {
+    color: #F2E1C2;
+    background-color: #262526;
+  }
+
+  &_long {
+    width: 387px;
+  }
 
   &:hover {
     color: #F2E1C2;
