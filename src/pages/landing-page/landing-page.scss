@@ -119,6 +119,8 @@
     height: 10px;
     background-color: #D9D9D9;
     border-radius: 50%;
+    transition: 1.4s;
+    animation: display 1.5s linear;
   }
 
   @keyframes slide-right {
@@ -160,6 +162,21 @@
     0% {
       opacity: 0;
       visibility: hidden;
+    }
+    100% {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  @keyframes display {
+    0% {
+      opacity: 0;
+      visibility: hidden;
+    }
+    90% {
+      opacity: 0;
+      visibility: visible;
     }
     100% {
       opacity: 1;
