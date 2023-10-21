@@ -1,5 +1,6 @@
 extends ~pages-base/page-base
 include ~components/date-dropdown/date-dropdown
+include ~components/dropdown/dropdown
 
 block vars
   -
@@ -24,3 +25,8 @@ block content
       dateFrom: '2023, 8, 15',
       dateTo: '2023, 8, 19',
     })
+    +dropdown({
+        items: ['Взрослые', 'Дети', 'Младенцы'],
+        addingButtons: true,
+        title: 'Количество',
+      })

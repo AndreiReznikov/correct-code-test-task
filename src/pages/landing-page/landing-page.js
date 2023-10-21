@@ -1,4 +1,5 @@
 import '~components/header';
+import '~components/dropdown';
 import '~templates/fonts.scss';
 
 import LandingPage from './LandingPage';

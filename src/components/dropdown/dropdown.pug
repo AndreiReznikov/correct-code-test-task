@@ -1,0 +1,41 @@
+include ~components/button/button
+
+mixin dropdown(options = {})
+  -
+    let dropdownName = 'dropdown js-dropdown dropdown_guests js-dropdown_guests';
+    dropdownName += options.isOpened ? ' dropdown_opened' : '';
+    dropdownName += options.size === 'S' ? ' dropdown_size_s' : '';
+
+    const buttons = [
+      ['dropdown__clear-button js-dropdown__clear-button', 'Очистить'],
+      ['dropdown__apply-button js-dropdown__apply-button', 'Применить'],
+    ];
+
+  div(
+      class=dropdownName
+      data-clicks=options.clicksNum
+      data-buttons=options.buttonsNum
+    )
+    if options.title
+      h3.dropdown__title=options.title
+    .dropdown__wrapper
+      .dropdown__selection-container.js-dropdown__selection-container
+        input.dropdown__selection.js-dropdown__selection(readonly)
+        .dropdown__arrow-container
+          span.dropdown__arrow
+      .dropdown__menu.js-dropdown__menu
+        - let i = 0;
+          while i < options.items.length
+            - i += 1
+            .dropdown__option.js-dropdown__option(data-id=`${i}`)
+              span.dropdown__item
+                = options.items[i-1]
+          if options.addingButtons
+            .dropdown__buttons-container
+              each button in buttons
+                - const [ className, value ] = button;
+                span(class=className)
+                  +button({
+                    borderlessButton: true,
+                    text: value,
+                  })
