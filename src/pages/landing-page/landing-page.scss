@@ -45,7 +45,7 @@
     display: grid;
     place-items: center;
     font-family: 'Bebas Neue', Arial, sans-serif;
-    font-size: 35vw;
+    font-size: 48vw;
     background-color: #000;
     color: #fff;
     font-weight: bold;
@@ -66,7 +66,7 @@
     background-size: auto 150%;
     mix-blend-mode: lighten;
     font-family: 'Bebas Neue', Arial, sans-serif;
-    font-size: 35vw;
+    font-size: 48vw;
     color: #000;
     font-weight: bold;
     text-transform: uppercase;
@@ -82,17 +82,17 @@
     inset: 0;
     display: grid;
     place-items: center;
-    background-image: url('~img/scrim.jpg');
-    background-size: auto 150%;
+    background-image: url('~img/scrim.png');
+    background-size: cover;
+    background-repeat: no-repeat;
     mix-blend-mode: lighten;
     font-family: 'Bebas Neue', Arial, sans-serif;
-    font-size: 35vw;
+    font-size: 48vw;
     color: #000;
     font-weight: bold;
     text-transform: uppercase;
     user-select: none;
-    animation: slide-right 8s infinite;
-    opacity: 0.2;
+    animation: slide-right 20s infinite;
     pointer-events: none;
     z-index: 3;
   }
@@ -101,6 +101,9 @@
     0% {
       background-position: left;
     }
+    // 50% {
+    //   background-position: center;
+    // }
     100% {
       background-position: right;
     }
