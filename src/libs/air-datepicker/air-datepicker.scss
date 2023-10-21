@@ -1,0 +1,165 @@
+@import '~templates/mixins';
+@import '~constants/constants';
+
+.datepicker {
+  width: 775px;
+  min-height: 369px;
+  box-sizing: border-box;
+  z-index: 100;
+
+  @include media-max($sm) {
+    width: 266px;
+  }
+
+  &_size_s {
+    width: 266px;
+  }
+
+  &.active {
+    z-index: 300;
+  }
+
+  &--pointer {
+    display: none;
+  }
+
+  &--nav {
+    display: flex;
+    align-items: center;
+    padding: 20px 24px 22px;
+    border-bottom: none;
+    box-sizing: border-box;
+  }
+
+  &--nav-title {
+    flex-wrap: wrap;
+    font-family: Montserrat, Arial, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    line-height: 23px;
+    text-transform: none;
+  }
+
+  &--nav-title i {
+    padding-left: 5px;
+    font-size: 19px;
+    font-family: Montserrat, Arial, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    line-height: 23px;
+    text-transform: none;
+  }
+
+  &--nav-action {
+    width: 16px;
+    height: 16px;
+  }
+
+  &--arrow-prev {
+    transform: rotate(180deg);
+  }
+
+  &--content {
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  &--days {
+    padding-right: 21px;
+    padding-left: 21px;
+  }
+
+  &--day-name {
+    height: 39px;
+    font-family: Montserrat, Arial, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    line-height: 15px;
+    text-transform: none;
+    color: #262526;
+    box-sizing: border-box;
+  }
+
+  &--cell {
+    height: 40px !important;
+    font-family: Montserrat, Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 15px;
+    text-align: center;
+  }
+
+  &--cell.-selected-.-focus- {
+    background: #262526;
+  }
+
+  &--cell.-range-from- {
+    color: #fff;
+    font-weight: bold;
+    background: #262526;
+    border: none;
+  }
+
+  &--cell.-range-to- {
+    color: #fff;
+    font-weight: bold;
+    background: #262526;
+    border: none;
+  }
+
+  &--cell.-in-range- {
+    color: #262526;
+    background: #F2E1C2;
+  }
+
+  &--cell.-current- {
+    color: #fff;
+    font-weight: bold;
+    background:rgba(38, 37, 38, 0.8);
+  }
+
+  &--cell.-disabled- {
+    opacity: 0.5;
+  }
+
+  &--buttons {
+    flex-wrap: wrap;
+    padding-top: 12px;
+    padding-right: 20px;
+    padding-left: 20px;
+    border-top: none;
+  }
+
+  &--button {
+    flex: none;
+    max-width: 100px;
+    margin-left: auto;
+    font-family: Montserrat, Arial, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    line-height: 15px;
+    color: #262526;
+  }
+
+  &--button[data-action='clear'] {
+    margin-left: 0;
+  }
+
+  &--button:hover {
+    background: #fff;
+  }
+
+  &--nav-action path {
+    fill: #262526;
+    stroke: none;
+  }
+}

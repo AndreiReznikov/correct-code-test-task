@@ -1,0 +1,26 @@
+mixin date-dropdown(options = {})
+  .date-dropdown.js-date-dropdown
+    input(
+      type="text"
+      class="date-dropdown__input js-date-dropdown__input"
+      data-range="true"
+      data-multiple-dates-separator=" - "
+      data-position="bottom left"
+      data-from=options.dateFrom
+      data-to=options.dateTo
+      )
+
+    each val, index in ['from', 'to']
+      div(class=`date-dropdown__wrapper-${val}`)
+        if options.title
+          h3.date-dropdown__title=options.title[index]
+        div(class=`date-dropdown__input-wrapper-${val}`)
+          .date-dropdown__arrow
+          input(
+            class=`date-dropdown__input-${val} js-date-dropdown__input-${val}`
+            type="text"
+            placeholder="дд.мм.гггг"
+            data-from-empty=options.isFromEmpty
+            data-to-empty=options.isToEmpty
+            readonly
+            )

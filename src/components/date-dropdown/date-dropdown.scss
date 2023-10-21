@@ -1,0 +1,74 @@
+@import '~templates/mixins';
+@import '~constants/constants';
+
+.date-dropdown {
+  min-width: 250px;
+  max-width: 775px;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  z-index: 100;
+
+  &__title {
+    margin: 0;
+    padding: 0;
+    font-family: Montserrat, Arial, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
+  &__input {
+    position: absolute;
+    top: 58px;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    border: 0;
+    box-sizing: border-box;
+  }
+
+  &__input-wrapper-from,
+  &__input-wrapper-to {
+    position: relative;
+    margin-top: 5px;
+    box-sizing: border-box;
+  }
+
+  &__wrapper-from {
+    margin-right: 5px;
+    box-sizing: border-box;
+  }
+
+  &__input-from,
+  &__input-to {
+    width: 386px;
+    font-family: Montserrat, Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    padding-right: 30px;
+    background: #F2E1C2;
+    border: none;
+    border-bottom: 1px solid #000;
+    box-sizing: border-box;
+    outline: none;
+    cursor: pointer;
+
+    &::placeholder {
+      text-transform: uppercase;
+    }
+
+    &:hover,
+    &:focus {
+      border: 1px solid red;
+    }
+
+    @include media-max($sm) {
+      padding-left: 10px;
+    }
+  }
+}

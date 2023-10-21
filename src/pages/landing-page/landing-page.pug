@@ -1,4 +1,5 @@
 extends ~pages-base/page-base
+include ~components/date-dropdown/date-dropdown
 
 block vars
   -
@@ -17,3 +18,9 @@ block content
     .landing-page__path-line
     .landing-page__end-point
   .landing-page__scrim
+  .landing-page__popup
+    +date-dropdown({
+      title: ['Дата заезда', 'Дата выезда'],
+      dateFrom: '2023, 8, 15',
+      dateTo: '2023, 8, 19',
+    })

@@ -1,10 +1,12 @@
 import mars from '~videos/mars.mp4';
+import AirDatepicker from '~libs/air-datepicker';
 
 class LandingPage {
   init() {
     this._findElements();
     this._setVideo();
     this._startInitialAnimation();
+    this._initializeDateDropdown();
     this._addEventListeners();
   }
 
@@ -53,6 +55,23 @@ class LandingPage {
 
   _setVideo() {
     this.$video.attr('src', mars);
+  }
+
+  _initializeDateDropdown() {
+    this.dateDropdown = new AirDatepicker('.js-date-dropdown');
+
+    this.dateDropdown.initializePlugin({
+      clearButton: true,
+      keyboardNav: true,
+      navTitles: { days: 'MM <i>yyyy</i>' },
+      prevHtml: '<div class="datepicker--arrow-prev"></div>',
+      nextHtml: '<div class="datepicker--arrow-next"></div>',
+    });
+
+    this.dateDropdown.setDatesDefault();
+    this.dateDropdown.openDatepickerMultiple();
+    this.dateDropdown.addApplyButton();
+    this.dateDropdown.checkEmptyValue();
   }
 
   _addEventListeners() {
