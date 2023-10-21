@@ -4,4 +4,4 @@ mixin button(options = {})
     buttonClass += options.dark ? ' button_dark' : '';
     buttonClass += options.long ? ' button_long' : '';
 
-  button(class=buttonClass)=options.text
+  button(class=buttonClass type=options.type)=options.text

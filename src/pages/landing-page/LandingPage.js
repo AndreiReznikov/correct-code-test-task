@@ -6,6 +6,9 @@ class LandingPage {
     this._findElements();
     this._setVideo();
     this._startInitialAnimation();
+    this._openPopup();
+    this._closePopup();
+    this._preventDefault();
     this._initializeDateDropdown();
     this._addEventListeners();
   }
@@ -15,6 +18,10 @@ class LandingPage {
     this.$landingPageBackground = $('.landing-page__background');
     this.$landingPageTitle = $('.landing-page__title');
     this.$landingPageScrim = $('.landing-page__scrim');
+    this.$headerButton = $('.header__button-container button');
+    this.$popupButton = $('.popup__button-container button');
+    this.$popupCloseButton = $('.popup__close-button');
+    this.$popup = $('.popup');
     this.$video = $('video');
   }
 
@@ -57,6 +64,14 @@ class LandingPage {
     this.$video.attr('src', mars);
   }
 
+  _openPopup() {
+    this.$headerButton.on('click', () => this.$popup.css({ display: 'flex' }));
+  }
+
+  _closePopup() {
+    this.$popupCloseButton.on('click', () => this.$popup.css({ display: 'none' }));
+  }
+
   _initializeDateDropdown() {
     this.dateDropdown = new AirDatepicker('.js-date-dropdown');
 
@@ -72,6 +87,10 @@ class LandingPage {
     this.dateDropdown.openDatepickerMultiple();
     this.dateDropdown.addApplyButton();
     this.dateDropdown.checkEmptyValue();
+  }
+
+  _preventDefault() {
+    this.$popupButton.on('click', (event) => event.preventDefault());
   }
 
   _addEventListeners() {

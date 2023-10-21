@@ -1,0 +1,23 @@
+mixin popup()
+  .popup
+    .popup__title-container
+      h2.popup__title
+        span.popup__title-word Бронирование
+        span.popup__title-word билетов
+      button.popup__close-button
+    form.popup__form
+      .popup__widgets-container
+        .popup__date-dropdown-container
+          +date-dropdown({
+            title: ['Дата заезда', 'Дата выезда'],
+            dateFrom: '2023, 8, 15',
+            dateTo: '2023, 8, 19',
+          })
+        .popup__dropdown-container
+          +dropdown({
+            items: ['Взрослые', 'Дети', 'Младенцы'],
+            addingButtons: true,
+            title: 'Количество',
+          })
+      .popup__button-container
+        +button({ text: 'Купить билеты', type: 'submit', dark: true, long: true })

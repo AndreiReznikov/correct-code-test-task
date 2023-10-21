@@ -1,6 +1,7 @@
 extends ~pages-base/page-base
 include ~components/date-dropdown/date-dropdown
 include ~components/dropdown/dropdown
+include ~components/popup/popup
 
 block vars
   -
@@ -19,24 +20,4 @@ block content
     .landing-page__path-line
     .landing-page__end-point
   .landing-page__scrim
-  .landing-page__popup
-    .landing-page__popup-title-container
-      h2.landing-page__popup-title
-        span Бронирование
-        span билетов
-      button.landing-page__popup-close-button
-    .landing-page__widgets-container
-      .landing-page__date-dropdown-container
-        +date-dropdown({
-          title: ['Дата заезда', 'Дата выезда'],
-          dateFrom: '2023, 8, 15',
-          dateTo: '2023, 8, 19',
-        })
-      .landing-page__dropdown-container
-        +dropdown({
-          items: ['Взрослые', 'Дети', 'Младенцы'],
-          addingButtons: true,
-          title: 'Количество',
-        })
-    .landing-page__popup-button-container
-      +button({ text: 'Купить билеты', dark: true, long: true })
+  +popup()

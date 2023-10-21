@@ -35,7 +35,4 @@ mixin dropdown(options = {})
               each button in buttons
                 - const [ className, value ] = button;
                 span(class=className)
-                  +button({
-                    borderlessButton: true,
-                    text: value,
-                  })
+                  +button({ text: value })
