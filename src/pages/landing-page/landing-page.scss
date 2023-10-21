@@ -30,6 +30,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
+    padding-top: 50px;
     inset: 0;
     display: grid;
     place-items: center;
@@ -37,75 +38,141 @@
   }
 
   &__title {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+    @include layer-style;
+
     margin: 0;
-    inset: 0;
-    display: grid;
-    place-items: center;
-    font-family: 'Bebas Neue', Arial, sans-serif;
-    font-size: 48vw;
     background-color: #000;
-    color: #fff;
-    font-weight: bold;
-    text-transform: uppercase;
+    color: #000;
     mix-blend-mode: darken;
-    user-select: none;
+    transition: 1.3s linear;
     z-index: 1;
   }
 
   &__background {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    inset: 0;
-    display: grid;
-    place-items: center;
-    background: url('~img/background.jpg') center center / cover no-repeat fixed;
-    background-size: auto 150%;
-    mix-blend-mode: lighten;
-    font-family: 'Bebas Neue', Arial, sans-serif;
-    font-size: 48vw;
-    color: #000;
-    font-weight: bold;
-    text-transform: uppercase;
-    user-select: none;
-    transition: 0.8s;
+    @include layer-style;
+
+    background: url('~img/background.jpg') left center / cover no-repeat fixed;
+    background-size: auto 120%;
+    color: rgba(0, 0, 0, 0);
+    transition: 1s linear;
     z-index: 2;
   }
 
   &__scrim {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    inset: 0;
-    display: grid;
-    place-items: center;
+    @include layer-style;
+
     background-image: url('~img/scrim.png');
-    background-size: cover;
+    background-size: auto 180%;
     background-repeat: no-repeat;
     mix-blend-mode: lighten;
-    font-family: 'Bebas Neue', Arial, sans-serif;
-    font-size: 48vw;
-    color: #000;
-    font-weight: bold;
-    text-transform: uppercase;
-    user-select: none;
-    animation: slide-right 20s infinite;
+    animation: slide-right;
+    animation-timing-function: cubic-bezier(0.660, 0.735, 0.480, 0.965);
+    animation-duration: 12s;
     pointer-events: none;
+    transition: 1s linear;
+    color: rgba(0, 0, 0, 0);
+    opacity: 0;
     z-index: 3;
+  }
+
+  &__subtitle {
+    position: absolute;
+    top: 16.8vh;
+    left: 10.5vw;
+    font-family: Montserrat, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 36px;
+    color: #F23207;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: show 2s linear;
+    transition: 0.4s;
+    z-index: 4;
+  }
+
+  &__path {
+    position: absolute;
+    top: 190px;
+    left: 116px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: draw-line 1s ease-in;
+    z-index: 5;
+  }
+
+  &__path-line {
+    width: 2px;
+    height: 590px;
+    background-color: #D9D9D9;
+  }
+
+  &__starting-point {
+    width: 6px;
+    height: 6px;
+    background-color: #D9D9D9;
+    border-radius: 50%;
+  }
+
+  &__end-point {
+    width: 10px;
+    height: 10px;
+    background-color: #D9D9D9;
+    border-radius: 50%;
   }
 
   @keyframes slide-right {
     0% {
       background-position: left;
+      opacity: 0.7;
     }
-    // 50% {
-    //   background-position: center;
-    // }
+    35% {
+      opacity: 0.5;
+    }
+    40% {
+      opacity: 0;
+    }
+    45% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 0.7;
+    }
+    90% {
+      opacity: 0.6;
+    }
+    95% {
+      opacity: 0.5;
+    }
+    96% {
+      opacity: 0.4;
+    }
+    97% {
+      opacity: 0.3;
+    }
     100% {
       background-position: right;
+      opacity: 0;
+    }
+  }
+
+  @keyframes show {
+    0% {
+      opacity: 0;
+      visibility: hidden;
+    }
+    100% {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  @keyframes draw-line {
+    0% {
+      height: 0;
+    }
+    100% {
+      height: 590px;
     }
   }
 }

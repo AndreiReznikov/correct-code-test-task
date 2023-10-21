@@ -3,3 +3,29 @@
     @content;
   }
 }
+
+@mixin hover() {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin layer-style {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  padding-top: 22px;
+  padding-right: 13px;
+  display: grid;
+  place-items: center;
+  font-family: 'Bebas Neue', Arial, sans-serif;
+  font-size: 49.5vw;
+  font-weight: bold;
+  letter-spacing: -0.7vw;
+  text-transform: uppercase;
+  user-select: none;
+  box-sizing: border-box;
+}
