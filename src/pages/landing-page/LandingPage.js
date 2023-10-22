@@ -20,7 +20,7 @@ class LandingPage {
     this.$landingPageTitle = $('.landing-page__title');
     this.$landingPageScrim = $('.landing-page__scrim');
     this.$headerButton = $('.header__button-container button');
-    this.$popupButton = $('.popup__button-container button');
+    this.$popupButton = $('.popup button');
     this.$popupCloseButton = $('.popup__close-button');
     this.$popup = $('.popup');
     this.$video = $('video');

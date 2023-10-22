@@ -8,6 +8,14 @@
   justify-content: space-between;
   z-index: 100;
 
+  @include media-max($xxl) {
+    width: 630px;
+  }
+
+  @include media-max($md) {
+    width: 280px;
+  }
+
   &__title {
     margin: 0;
     padding: 0;
@@ -58,6 +66,19 @@
     &::placeholder {
       color: #000;
       text-transform: uppercase;
+    }
+
+    &:hover, &:hover::placeholder  {
+      color: grey;
+      border-color: grey;
+    }
+
+    @include media-max($xxl) {
+      width: 300px;
+    }
+
+    @include media-max($md) {
+      width: 135px;
     }
   }
 }

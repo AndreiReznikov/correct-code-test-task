@@ -23,7 +23,11 @@
   }
 
   &_long {
-    width: 387px;
+    min-width: 387px;
+
+    @include media-max($md) {
+      min-width: 280px;
+    }
   }
 
   &:hover {

@@ -35,4 +35,4 @@ mixin dropdown(options = {})
               each button in buttons
                 - const [ className, value ] = button;
                 span(class=className)
-                  +button({ text: value })
+                  button.dropdown__button=value
