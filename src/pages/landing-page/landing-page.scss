@@ -85,6 +85,10 @@
     width: 1195px;
     height: 606px;
 
+    @media (min-width: $xl) and (max-height: 1023px) {
+      height: 520px;
+    }
+
     @include media-max($xxl) {
       width: 880px;
       height: 450px;
@@ -142,6 +146,10 @@
       top: -50px;
       font-size: 24px;
     }
+
+    @media (min-width: $xl) and (max-height: 800px) {
+      top: 0;
+    }
   }
 
   &__path {
@@ -154,6 +162,14 @@
     height: 100%;
     animation: draw-line 1s ease-in;
     z-index: 6;
+
+    @media (min-width: $xl) and (max-height: 1023px) {
+      top: 0;
+    }
+
+    @media (min-width: $xxl) and (max-height: 800px) {
+      top: 60px;
+    }
   }
 
   &__path-line {
