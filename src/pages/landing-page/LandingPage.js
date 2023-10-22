@@ -28,10 +28,17 @@ class LandingPage {
 
   _startInitialAnimation() {
     setTimeout(() => this._setBackgroundPosition('center'));
-    setTimeout(() => {
-      this.$landingPageBackground.text('Марс');
-      this.$landingPageScrim.text('Марс');
-    }, 3000);
+    const start = performance.now();
+    const animate = (timestamp) => {
+      const elapsed = timestamp - start;
+      if (elapsed >= 3000) {
+        this.$landingPageBackground.text('Марс');
+        this.$landingPageScrim.text('Марс');
+        return;
+      }
+      requestAnimationFrame(animate);
+    };
+    requestAnimationFrame(animate);
   }
 
   _setBackgroundPosition(position) {
