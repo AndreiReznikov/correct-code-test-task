@@ -4,12 +4,12 @@
   align-items: center;
   min-width: 179px;
   min-height: 40px;
-  padding: 10px 15px 10px 15px;
+  padding: 10px 15px;
   font-family: Montserrat, Arial, sans-serif;
   font-size: 16px;
   font-weight: 500;
-  color: #262526;
-  background-color: #F2E1C2;
+  color: constants.$secondary;
+  background-color: constants.$primary;
   border: none;
   border-radius: 4px;
   transition: 0.8s;
@@ -18,21 +18,21 @@
   cursor: pointer;
 
   &_dark {
-    color: #F2E1C2;
-    background-color: #262526;
+    color: constants.$primary;
+    background-color: constants.$secondary;
   }
 
   &_long {
     min-width: 387px;
 
-    @include media-max($md) {
+    @include mixins.media-max(constants.$md) {
       min-width: 280px;
     }
   }
 
   &:hover {
-    color: #F2E1C2;
-    background-color: #F23207;
+    color: constants.$primary;
+    background-color: constants.$hover-color;
   }
 
   &:disabled {

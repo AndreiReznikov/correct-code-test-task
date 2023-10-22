@@ -1,3 +1,5 @@
+@use '~templates/mixins';
+@use '~constants/constants';
 @import 'normalize.css';
 @import '~libs/air-datepicker/air-datepicker';
 @import '~components/logo/logo';
@@ -6,15 +8,15 @@
 @import '~components/date-dropdown/date-dropdown';
 @import '~components/dropdown/dropdown';
 @import '~components/popup/popup';
-@import '~templates/mixins';
-@import '~constants/constants';
 
 .landing-page {
+  @include mixins.default-font;
+
   position: relative;
   min-height: 100vh;
   overflow-x: hidden;
 
-  @media (max-height: 800px) {
+  @media (height <= 800px) {
     min-height: 850px;
   }
 
@@ -25,7 +27,7 @@
   }
 
   &__wrapper {
-    max-width: $xxl;
+    max-width: constants.$xxl;
     margin: 0 auto;
   }
 
@@ -45,7 +47,7 @@
   }
 
   &__title {
-    @include layer-style;
+    @include mixins.layer-style;
 
     margin: 0;
     background-color: #000;
@@ -56,7 +58,7 @@
   }
 
   &__screen {
-    @include layer-style;
+    @include mixins.layer-style;
 
     background-color: #000;
     transition: 1s linear;
@@ -67,7 +69,7 @@
   }
 
   &__background {
-    @include layer-style;
+    @include mixins.layer-style;
 
     background: url('~img/background.jpg') left center / cover no-repeat fixed;
     background-size: auto 140%;
@@ -78,7 +80,7 @@
   }
 
   &__subtitle-container {
-    @include layer-style;
+    @include mixins.layer-style;
 
     pointer-events: none;
     z-index: 5;
@@ -89,29 +91,29 @@
     width: 1195px;
     height: 606px;
 
-    @include media-max($xxl) {
+    @include mixins.media-max(constants.$xxl) {
       width: 880px;
       height: 450px;
     }
 
-    @include media-max($lg) {
+    @include mixins.media-max(constants.$lg) {
       width: 700px;
       height: 380px;
     }
 
-    @include media-max($md) {
+    @include mixins.media-max(constants.$md) {
       width: 550px;
       height: 300px;
     }
 
-    @include media-max($sm) {
+    @include mixins.media-max(constants.$sm) {
       width: 300px;
       height: 200px;
     }
   }
 
   &__scrim {
-    @include layer-style;
+    @include mixins.layer-style;
 
     background-image: url('~img/scrim.png');
     background-size: auto 180%;
@@ -135,18 +137,18 @@
     font-family: Montserrat, Arial, sans-serif;
     font-weight: 500;
     font-size: 36px;
-    color: #F23207;
+    color: constants.$hover-color;
     text-transform: uppercase;
     letter-spacing: 1px;
     animation: show 2s linear;
     transition: 0.4s;
     z-index: 5;
 
-    @include media-max($md) {
+    @include mixins.media-max(constants.$md) {
       font-size: 24px;
     }
 
-    @include media-max($sm) {
+    @include mixins.media-max(constants.$sm) {
       top: -30px;
     }
   }
@@ -190,30 +192,39 @@
       background-position: left;
       opacity: 0.7;
     }
+
     25% {
       opacity: 0.5;
     }
+
     30% {
       opacity: 0.2;
     }
+
     35% {
       opacity: 0;
     }
+
     40% {
       opacity: 0;
     }
+
     45% {
       opacity: 0.5;
     }
+
     50% {
       opacity: 0.7;
     }
+
     90% {
       opacity: 0.4;
     }
+
     95% {
       opacity: 0.3;
     }
+
     100% {
       background-position: right;
       opacity: 0;
@@ -225,6 +236,7 @@
       opacity: 0;
       visibility: hidden;
     }
+
     100% {
       opacity: 1;
       visibility: visible;
@@ -236,10 +248,12 @@
       opacity: 1;
       visibility: visible;
     }
+
     50% {
       opacity: 1;
       visibility: visible;
     }
+
     100% {
       opacity: 0;
       visibility: hidden;
@@ -251,10 +265,12 @@
       opacity: 0;
       visibility: hidden;
     }
+
     75% {
       opacity: 0;
       visibility: visible;
     }
+
     100% {
       opacity: 1;
       visibility: visible;
@@ -265,6 +281,7 @@
     0% {
       height: 0;
     }
+
     100% {
       height: 100%;
     }

@@ -1,23 +1,23 @@
-@import '~templates/mixins';
-@import '~constants/constants';
+@use '~templates/mixins';
+@use '~constants/constants';
 
 .header {
   width: 100%;
   min-height: 100%;
 
   &__header {
-    max-width: $xxl;
+    max-width: constants.$xxl;
     margin: 30px auto;
     padding-left: 100px;
     padding-right: 100px;
     box-sizing: border-box;
 
-    @include media-max($lg) {
+    @include mixins.media-max(constants.$lg) {
       padding-left: 50px;
       padding-right: 50px;
     }
 
-    @include media-max($md) {
+    @include mixins.media-max(constants.$md) {
       padding-left: 15px;
       padding-right: 15px;
     }
@@ -34,7 +34,7 @@
     justify-content: space-between;
     align-items: center;
 
-    @include media-max($sm) {
+    @include mixins.media-max(constants.$sm) {
       justify-content: flex-end;
     }
   }
@@ -42,7 +42,7 @@
   &__nav {
     display: flex;
 
-    @include media-max($xl) {
+    @include mixins.media-max(constants.$xl) {
       display: none;
     }
   }
@@ -65,24 +65,24 @@
     font-family: Montserrat, Arial, sans-serif;
     font-size: 16px;
     font-weight: 500;
-    color: #F2E1C2;
+    color: constants.$primary;
     transition: 0.8s;
     text-decoration: none;
     text-transform: uppercase;
 
     &:hover {
-      color: #F23207;
+      color: constants.$hover-color;
     }
   }
 
   &__button-container {
     margin-left: 40px;
 
-    @include media-max($xl) {
+    @include mixins.media-max(constants.$xl) {
       margin-left: 0;
     }
 
-    @include media-max($sm) {
+    @include mixins.media-max(constants.$sm) {
       display: flex;
       justify-content: flex-end;
       width: 100%;
@@ -97,7 +97,7 @@
     height: 40px;
     margin-left: 60px;
 
-    @include media-max($xl) {
+    @include mixins.media-max(constants.$xl) {
       display: flex;
       align-items: center;
     }
@@ -107,7 +107,7 @@
     position: relative;
     width: 55px;
     height: 5px;
-    background-color: #F2E1C2;
+    background-color: constants.$primary;
 
     &::after {
       content: '';
@@ -115,7 +115,7 @@
       top: 16px;
       width: 55px;
       height: 5px;
-      background-color: #F2E1C2;
+      background-color: constants.$primary;
       transition: 0.6s;
     }
 
@@ -125,7 +125,7 @@
       bottom: 16px;
       width: 55px;
       height: 5px;
-      background-color: #F2E1C2;
+      background-color: constants.$primary;
       transition: 0.6s;
     }
 
@@ -156,7 +156,7 @@
     width: 320px;
     height: 100%;
     padding-bottom: 80px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgb(255 255 255 / 10%);
     border: 2px solid gray;
     transition: 0.4s;
     mix-blend-mode: none;

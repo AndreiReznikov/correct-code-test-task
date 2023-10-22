@@ -1,5 +1,5 @@
-@import '~templates/mixins';
-@import '~constants/constants';
+@use '~templates/mixins';
+@use '~constants/constants';
 
 .date-dropdown {
   width: 790px;
@@ -8,17 +8,18 @@
   justify-content: space-between;
   z-index: 100;
 
-  @include media-max($xxl) {
+  @include mixins.media-max(constants.$xxl) {
     width: 630px;
   }
 
-  @include media-max($md) {
+  @include mixins.media-max(constants.$md) {
     width: 280px;
   }
 
   &__title {
     margin: 0;
     padding: 0;
+    color: constants.$secondary;
     font-family: Montserrat, Arial, sans-serif;
     font-style: normal;
     font-weight: bold;
@@ -56,7 +57,7 @@
     font-style: normal;
     font-size: 16px;
     padding-right: 30px;
-    background: #F2E1C2;
+    background: constants.$primary;
     border: none;
     border-bottom: 2px solid #000;
     box-sizing: border-box;
@@ -73,11 +74,11 @@
       border-color: grey;
     }
 
-    @include media-max($xxl) {
+    @include mixins.media-max(constants.$xxl) {
       width: 300px;
     }
 
-    @include media-max($md) {
+    @include mixins.media-max(constants.$md) {
       width: 135px;
     }
   }

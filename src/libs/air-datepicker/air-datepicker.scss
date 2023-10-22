@@ -1,5 +1,5 @@
-@import '~templates/mixins';
-@import '~constants/constants';
+@use '~templates/mixins';
+@use '~constants/constants';
 
 .datepicker {
   width: 790px;
@@ -7,15 +7,15 @@
   box-sizing: border-box;
   z-index: 100;
 
-  @media (max-height: 1023px) {
+  @media (height <= 1023px) {
     min-height: 120px !important;
   }
 
-  @include media-max($xxl) {
+  @include mixins.media-max(constants.$xxl) {
     width: 630px;
   }
 
-  @include media-max($md) {
+  @include mixins.media-max(constants.$md) {
     width: 280px;
   }
 
@@ -45,19 +45,16 @@
     font-style: normal;
     font-weight: bold;
     font-size: 12px;
-    text-transform: uppercase;
     line-height: 23px;
     text-transform: none;
   }
 
   &--nav-title i {
     padding-left: 5px;
-    font-size: 19px;
     font-family: Montserrat, Arial, sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 12px;
-    text-transform: uppercase;
     line-height: 23px;
     text-transform: none;
   }
@@ -70,7 +67,7 @@
   &--arrow-prev::after,
   &--arrow-next::after {
     content: '>';
-    color: #262526;
+    color: constants.$secondary;
     font-size: 20px;
     font-weight: bold;
   }
@@ -95,10 +92,9 @@
     font-style: normal;
     font-weight: bold;
     font-size: 12px;
-    text-transform: uppercase;
     line-height: 15px;
     text-transform: none;
-    color: #262526;
+    color: constants.$secondary;
     box-sizing: border-box;
   }
 
@@ -111,38 +107,38 @@
     line-height: 15px;
     text-align: center;
 
-    @media (max-height: 1023px) {
+    @media (height <= 1023px) {
       height: 20px !important;
     }
   }
 
   &--cell.-selected-.-focus- {
-    background: #262526;
+    background: constants.$secondary;
   }
 
   &--cell.-range-from- {
     color: #fff;
     font-weight: bold;
-    background: #262526;
+    background: constants.$secondary;
     border: none;
   }
 
   &--cell.-range-to- {
     color: #fff;
     font-weight: bold;
-    background: #262526;
+    background: constants.$secondary;
     border: none;
   }
 
   &--cell.-in-range- {
-    color: #262526;
-    background: #F2E1C2;
+    color: constants.$secondary;
+    background: constants.$primary;
   }
 
   &--cell.-current- {
     color: #fff;
     font-weight: bold;
-    background:rgba(38, 37, 38, 0.8);
+    background:rgb(38 37 38 / 80%);
   }
 
   &--cell.-current-.-in-range- {
@@ -171,7 +167,7 @@
     font-size: 12px;
     text-transform: uppercase;
     line-height: 15px;
-    color: #262526;
+    color: constants.$secondary;
 
     &:hover {
       background: #fff;
@@ -184,7 +180,7 @@
   }
 
   &--nav-action path {
-    fill: #262526;
+    fill: constants.$secondary;
     stroke: none;
   }
 }

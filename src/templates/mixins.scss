@@ -1,4 +1,11 @@
-@import '~constants/constants';
+@use '~constants/constants';
+
+@mixin default-font() {
+  font-family: Montserrat, Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+}
 
 @mixin media-max($units) {
   @media screen and (max-width: $units) {
@@ -31,23 +38,23 @@
   user-select: none;
   box-sizing: border-box;
 
-  @media (max-width: $xxl) or (max-height: 1023px) {
+  @media (max-width: constants.$xxl) or (height <= 1023px) {
     padding-top: 0;
   }
 
-  @include media-max($xxl) {
+  @include media-max(constants.$xxl) {
     font-size: 515px;
   }
 
-  @include media-max($lg) {
+  @include media-max(constants.$lg) {
     font-size: 415px;
   }
 
-  @include media-max($md) {
+  @include media-max(constants.$md) {
     font-size: 315px;
   }
 
-  @include media-max($sm) {
+  @include media-max(constants.$sm) {
     font-size: 180px;
   }
 }

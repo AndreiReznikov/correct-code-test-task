@@ -1,5 +1,5 @@
-@import '~templates/mixins';
-@import '~constants/constants';
+@use '~templates/mixins';
+@use '~constants/constants';
 
 .dropdown {
   position: relative;
@@ -10,16 +10,17 @@
   font-size: 12px;
   z-index: 11;
 
-  @include media-max($xxl) {
+  @include mixins.media-max(constants.$xxl) {
     width: 300px;
   }
 
-  @include media-max($md) {
+  @include mixins.media-max(constants.$md) {
     width: 280px;
   }
 
   &__title {
     margin: 0;
+    color: constants.$secondary;
     font-family: Montserrat, Arial, sans-serif;
     font-style: normal;
     font-weight: bold;
@@ -64,7 +65,7 @@
     padding-right: 30px;
     border-width: 1px;
     border-style: solid;
-    background: #F2E1C2;
+    background: constants.$primary;
     border: none;
     border-bottom: 2px solid #000;
     font-family: Montserrat, Arial, sans-serif;
@@ -111,7 +112,7 @@
   }
 
   &__selection-container:hover ~ &__menu {
-    border-color: rgb(208, 201, 201);
+    border-color: rgb(208 201 201);
   }
 
   &__option {
@@ -164,12 +165,12 @@
 
   &__counter-decrement:hover:not(&__counter-decrement_dim),
   &__counter-increment:hover:not(&__counter-decrement_dim) {
-    background-color: grey;
+    background-color: rgba(45, 44, 44, 0.1);
   }
 
   &__counter-decrement_dim {
-    color: rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    color: rgb(0 0 0 / 20%);
+    border: 1px solid rgb(0 0 0 / 20%);
     cursor: default;
   }
 
@@ -195,7 +196,7 @@
     line-height: 15px;
     background: transparent;
     border: none;
-    color: #262526;
+    color: constants.$secondary;
     cursor: pointer;
 
     &:hover {
