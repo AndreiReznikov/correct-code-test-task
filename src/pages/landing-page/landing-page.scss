@@ -27,7 +27,7 @@
 
   &__header-container {
     position: relative;
-    z-index: 4;
+    z-index: 5;
   }
 
   &__video {
@@ -46,10 +46,21 @@
 
     margin: 0;
     background-color: #000;
-    color: #000;
+    color: #fff;
     mix-blend-mode: darken;
     transition: 1.3s linear;
     z-index: 1;
+  }
+
+  &__screen {
+    @include layer-style;
+
+    background-color: #000;
+    transition: 1s linear;
+    animation: hide 2s linear;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 2;
   }
 
   &__background {
@@ -58,8 +69,9 @@
     background: url('~img/background.jpg') left center / cover no-repeat fixed;
     background-size: auto 120%;
     color: rgba(0, 0, 0, 0);
+    mix-blend-mode: lighten;
     transition: 1s linear;
-    z-index: 2;
+    z-index: 3;
   }
 
   &__scrim {
@@ -76,7 +88,7 @@
     transition: 1s linear;
     color: rgba(0, 0, 0, 0);
     opacity: 0;
-    z-index: 3;
+    z-index: 4;
   }
 
   &__subtitle {
@@ -91,7 +103,7 @@
     letter-spacing: 1px;
     animation: show 2s linear;
     transition: 0.4s;
-    z-index: 4;
+    z-index: 5;
   }
 
   &__path {
@@ -102,7 +114,7 @@
     flex-direction: column;
     align-items: center;
     animation: draw-line 1s ease-in;
-    z-index: 5;
+    z-index: 6;
   }
 
   &__path-line {
@@ -170,6 +182,21 @@
     100% {
       opacity: 1;
       visibility: visible;
+    }
+  }
+
+  @keyframes hide {
+    0% {
+      opacity: 1;
+      visibility: visible;
+    }
+    50% {
+      opacity: 1;
+      visibility: visible;
+    }
+    100% {
+      opacity: 0;
+      visibility: hidden;
     }
   }
 

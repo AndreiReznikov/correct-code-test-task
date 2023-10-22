@@ -1,5 +1,5 @@
-import mars from '~videos/mars.mp4';
 import AirDatepicker from '~libs/air-datepicker';
+import mars from '~videos/mars.mp4';
 
 class LandingPage {
   init() {
@@ -16,6 +16,7 @@ class LandingPage {
   _findElements() {
     this.$window = $(window);
     this.$landingPageBackground = $('.landing-page__background');
+    this.$landingPageScreen = $('.landing-page__screen');
     this.$landingPageTitle = $('.landing-page__title');
     this.$landingPageScrim = $('.landing-page__scrim');
     this.$headerButton = $('.header__button-container button');
@@ -28,16 +29,6 @@ class LandingPage {
   _startInitialAnimation() {
     setTimeout(() => this._setBackgroundPosition('center'));
     setTimeout(() => {
-      this.$landingPageBackground.css({
-        color: 'rgba(0, 0, 0, 1)',
-        'mix-blend-mode': 'lighten',
-      });
-      this.$landingPageScrim.css({
-        color: 'rgba(0, 0, 0, 1)',
-      });
-      this.$landingPageTitle.css({
-        color: '#fff',
-      });
       this.$landingPageBackground.text('Марс');
       this.$landingPageScrim.text('Марс');
     }, 1200);
