@@ -31,7 +31,7 @@ class LandingPage {
     setTimeout(() => {
       this.$landingPageBackground.text('Марс');
       this.$landingPageScrim.text('Марс');
-    }, 1200);
+    }, 1535);
   }
 
   _setBackgroundPosition(position) {

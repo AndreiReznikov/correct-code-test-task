@@ -57,7 +57,7 @@
 
     background-color: #000;
     transition: 1s linear;
-    animation: hide 2s linear;
+    animation: hide 3s linear;
     opacity: 0;
     visibility: hidden;
     z-index: 2;
@@ -68,7 +68,7 @@
 
     background: url('~img/background.jpg') left center / cover no-repeat fixed;
     background-size: auto 120%;
-    color: rgba(0, 0, 0, 0);
+    color: #000;
     mix-blend-mode: lighten;
     transition: 1s linear;
     z-index: 3;
