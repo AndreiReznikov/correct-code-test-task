@@ -1,4 +1,8 @@
 import Header from './Header';
 
-const header = new Header();
-header.init();
+const initializeHeader = () => {
+  const header = new Header();
+  header.init();
+};
+
+document.addEventListener('DOMContentLoaded', initializeHeader);

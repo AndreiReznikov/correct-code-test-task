@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const PugPlugin = require('pug-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const AutoprefixerPlugin = require('autoprefixer');
 
 const PATHS = {
   src: path.resolve(process.cwd(), 'src'),
@@ -63,7 +64,7 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               postcssOptions: {
-                plugins: [['postcss-preset-env']],
+                plugins: [AutoprefixerPlugin()],
               },
             },
           },
@@ -100,18 +101,6 @@ module.exports = {
           filename: 'assets/videos/[name][ext]',
         },
       },
-      // {
-      //   test: /\.(mp4)$/,
-      //   use: [
-      //     {
-      //       loader: 'file-loader',
-      //       options: {
-      //         name: '[name].[ext]',
-      //         outputPath: 'video/',
-      //       },
-      //     },
-      //   ],
-      // },
     ],
   },
   plugins: [

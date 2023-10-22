@@ -21,7 +21,7 @@ class Dropdown {
 
     $counter.append(
       '<span class="dropdown__counter-decrement dropdown__counter-decrement_dim js-dropdown__counter-decrement"></span>',
-      '<input class="dropdown__counter-value js-dropdown__counter-value" value="0" type="number" readonly></input>',
+      '<input class="dropdown__counter-value js-dropdown__counter-value" value="0" readonly></input>',
       '<span class="dropdown__counter-increment js-dropdown__counter-increment"></span>',
     );
   }

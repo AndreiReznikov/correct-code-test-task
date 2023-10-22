@@ -39,7 +39,11 @@ class LandingPage {
   }
 
   _shiftBackground(event) {
-    this.$landingPageBackground.css({ transition: '0.6s' });
+    this.$landingPageBackground.css({
+      '-webkit-transition': '0.6s',
+      '-o-transition': '0.6s',
+      transition: '0.6s',
+    });
 
     this.$windowWidth = this.$window.width();
     this.clientX = event.pageX;
@@ -56,7 +60,13 @@ class LandingPage {
   }
 
   _openPopup() {
-    this.$headerButton.on('click', () => this.$popup.css({ display: 'flex' }));
+    this.$headerButton.on('click', () => this.$popup.css({
+      display: '-webkit-box',
+      // eslint-disable-next-line no-dupe-keys
+      display: '-ms-flexbox',
+      // eslint-disable-next-line no-dupe-keys
+      display: 'flex',
+    }));
   }
 
   _closePopup() {

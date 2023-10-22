@@ -5,19 +5,28 @@ mixin header()
   -
     const data = require('./data/data.json');
 
-  header.header
-    .header__wrapper
-      .header__left-block
-        +logo({ href: 'landing-page.html' })
-      .header__right-block
-        nav.header__nav
-          ul.header__nav-list
-            each item in data.menuItems
-              - const { name, link } = item;
-                li.header__nav-item
-                  a.header__nav-link(href=link)
-                    span.header__nav-item-name=name
-        .header__button-container
-          +button({ text: 'Купить билеты' })
-        .header__burger-container
-          .header__burger
+  .header
+    header.header__header
+      .header__wrapper
+        .header__left-block
+          +logo({ href: 'landing-page.html' })
+        .header__right-block
+          nav.header__nav
+            ul.header__nav-list
+              each item in data.menuItems
+                - const { name, link } = item;
+                  li.header__nav-item
+                    a.header__nav-link(href=link)
+                      span.header__nav-item-name=name
+          .header__button-container
+            +button({ text: 'Купить билеты' })
+          .header__burger-container
+            .header__burger
+    .header__mobile-menu
+      nav.header__mobile-nav
+        ul.header__mobile-list
+          each item in data.menuItems
+            - const { name, link } = item;
+            li.header__mobile-list-item
+              a.header__mobile-list-link(href=link)
+                span.header__mobile-list-item=name
