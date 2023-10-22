@@ -1,5 +1,7 @@
-@mixin media-max($unit) {
-  @media screen and (max-width: $unit) {
+@import '~constants/constants';
+
+@mixin media-max($units) {
+  @media screen and (max-width: $units) {
     @content;
   }
 }
@@ -15,17 +17,38 @@
 @mixin layer-style {
   position: absolute;
   display: grid;
-  place-items: center;
+  place-items: start center;
   width: 100%;
   height: 100%;
   inset: 0;
-  padding-top: 22px;
-  padding-right: 13px;
+  padding-top: 112px;
+  padding-right: 14px;
   font-family: 'Bebas Neue', Arial, sans-serif;
-  font-size: 49.5vw;
+  font-size: 715px;
   font-weight: bold;
-  letter-spacing: -0.7vw;
+  letter-spacing: -11px;
   text-transform: uppercase;
   user-select: none;
   box-sizing: border-box;
+
+  @media (max-width: $xxl) or (max-height: 1023px) {
+    padding-top: 0;
+    place-items: center center;
+  }
+
+  @include media-max($xxl) {
+    font-size: 515px;
+  }
+
+  @include media-max($lg) {
+    font-size: 415px;
+  }
+
+  @include media-max($md) {
+    font-size: 315px;
+  }
+
+  @include media-max($sm) {
+    font-size: 180px;
+  }
 }
