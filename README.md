@@ -42,6 +42,8 @@ https://andreireznikov.github.io/true-code-test-task-demo/landing-page.html
 
 При работе с браузером Safari не срабатывал нужный для анимации появления надписи Марс setTimeout. Использовал альтернативное решение (requestAnimationFrame).
 
+Для расчёта таймингов анимации дымки добавил *animation-timing-function: cubic-bezier(.62, .91, .53, .87);*. Резкого замедления в конце достичь не удалось, анимация проходит более плавно, чем показано в примере.
+
 При работе над проектом я старался следовать этим стандартам: [best practices](https://github.com/fullstack-development/front-end-best-practices)
 
 # Совместимость
