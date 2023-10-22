@@ -8,8 +8,8 @@ class LandingPage {
     this._startInitialAnimation();
     this._openPopup();
     this._closePopup();
-    this._preventDefault();
     this._initializeDateDropdown();
+    this._preventDefault();
     this._addEventListeners();
   }
 

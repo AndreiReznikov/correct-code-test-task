@@ -27,14 +27,13 @@
 
   &__header-container {
     position: relative;
-    z-index: 5;
+    z-index: 6;
   }
 
   &__video {
     position: absolute;
     width: 100%;
-    height: auto;
-    padding-top: 150px;
+    height: 100%;
     inset: 0;
     display: grid;
     place-items: inset;
@@ -74,6 +73,39 @@
     z-index: 3;
   }
 
+  &__subtitle-container {
+    @include layer-style;
+
+    pointer-events: none;
+    z-index: 5;
+  }
+
+  &__subtitle-container-inner-block {
+    position: relative;
+    width: 1195px;
+    height: 606px;
+
+    @include media-max($xxl) {
+      width: 880px;
+      height: 450px;
+    }
+
+    @include media-max($lg) {
+      width: 700px;
+      height: 380px;
+    }
+
+    @include media-max($md) {
+      width: 550px;
+      height: 300px;
+    }
+
+    @include media-max($sm) {
+      width: 300px;
+      height: 200px;
+    }
+  }
+
   &__scrim {
     @include layer-style;
 
@@ -93,8 +125,9 @@
 
   &__subtitle {
     position: absolute;
-    top: 16.8vh;
-    left: 10.5vw;
+    top: -20px;
+    left: 35px;
+    margin-top: 0;
     font-family: Montserrat, Arial, sans-serif;
     font-weight: 500;
     font-size: 36px;
@@ -104,22 +137,28 @@
     animation: show 2s linear;
     transition: 0.4s;
     z-index: 5;
+
+    @include media-max($sm) {
+      top: -50px;
+      font-size: 24px;
+    }
   }
 
   &__path {
     position: absolute;
-    top: 190px;
-    left: 116px;
+    top: -32px;
+    left: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100%;
     animation: draw-line 1s ease-in;
     z-index: 6;
   }
 
   &__path-line {
     width: 2px;
-    height: 590px;
+    height: inherit;
     background-color: #D9D9D9;
   }
 
@@ -220,7 +259,7 @@
       height: 0;
     }
     100% {
-      height: 590px;
+      height: 100%;
     }
   }
 }

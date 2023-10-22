@@ -25,8 +25,13 @@
 
   &__right-block {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+
+    @include media-max($sm) {
+      justify-content: flex-end;
+    }
   }
 
   &__nav {
@@ -71,10 +76,20 @@
     @include media-max($xl) {
       margin-left: 0;
     }
+
+    @include media-max($sm) {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+      margin-top: 20px;
+      order: 1;
+    }
   }
 
   &__burger-container {
     display: none;
+    width: 60px;
+    height: 40px;
     margin-left: 60px;
 
     @include media-max($xl) {
