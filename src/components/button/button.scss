@@ -34,4 +34,12 @@
     color: #F2E1C2;
     background-color: #F23207;
   }
+
+  &:disabled {
+    opacity: 0.3;
+  }
+
+  &[disabled] {
+    pointer-events: none;
+  }
 }

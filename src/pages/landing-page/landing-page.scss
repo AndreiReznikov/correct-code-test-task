@@ -12,7 +12,11 @@
 .landing-page {
   position: relative;
   min-height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
+
+  @media (max-height: 800px) {
+    min-height: 1000px;
+  }
 
   &_non-scrollable {
     position: fixed;
@@ -85,10 +89,6 @@
     width: 1195px;
     height: 606px;
 
-    @media (min-width: $xl) and (max-height: 1023px) {
-      height: 520px;
-    }
-
     @include media-max($xxl) {
       width: 880px;
       height: 450px;
@@ -129,7 +129,7 @@
 
   &__subtitle {
     position: absolute;
-    top: -20px;
+    top: -40px;
     left: 35px;
     margin-top: 0;
     font-family: Montserrat, Arial, sans-serif;
@@ -142,13 +142,8 @@
     transition: 0.4s;
     z-index: 5;
 
-    @include media-max($sm) {
-      top: -50px;
+    @include media-max($md) {
       font-size: 24px;
-    }
-
-    @media (min-width: $xl) and (max-height: 800px) {
-      top: 0;
     }
   }
 
@@ -162,14 +157,6 @@
     height: 100%;
     animation: draw-line 1s ease-in;
     z-index: 6;
-
-    @media (min-width: $xl) and (max-height: 1023px) {
-      top: 0;
-    }
-
-    @media (min-width: $xxl) and (max-height: 800px) {
-      top: 60px;
-    }
   }
 
   &__path-line {
